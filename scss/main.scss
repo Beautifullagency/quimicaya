@@ -1,0 +1,405 @@
+@import "reset";
+
+body{
+  font-family: 'Roboto', sans-serif;
+  padding-top: 100px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 900 !important;
+  color: $color-principal;
+}
+
+.minContenido{
+  min-height: calc(100vh - 488px);
+}
+
+header{
+  background-color: $color-principal;
+  border-bottom: 5px solid white;
+  box-shadow: 0 1px 20px 0 rgba(0,0,0,0.25);
+  z-index: 15;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  .border-left{
+    border-left: 2px solid white !important;
+  }
+  .navbar{
+
+    .navbar-toggler{
+      border: 1px solid white;
+      &:focus{
+        outline: none;
+      }
+    }
+    .nav-link{
+      color: white;
+      &:hover,
+      &:visited,
+      &:focus{
+        opacity: 0.75;
+      }
+    }
+    .logoContainer{
+      .navbar-brand{
+        margin: 0;
+        padding: 0;
+        img{
+          max-height: 80px;
+          width: auto;
+        }
+      }
+      h1{
+        color: white;
+        margin: 0;
+        font-weight: 900;
+        font-size: 2rem;
+      }
+    }
+    .nav-item{
+      margin-right: 1rem;
+      &:last-child{
+        margin-right: 0;
+      }
+      .dropdown-menu{
+        background-color: rgba($color-principal, 0.8);
+        margin-top: 2rem;
+        border-radius: 0;
+        padding: 0;
+        .dropdown-item{
+          color: white;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+    .navSociales{
+      list-style: none;
+      font-size: 0.6rem;
+      margin: 0;
+      padding: 0;
+      li{
+        display: inline-block;
+        margin-right: 10px;
+        &:last-child{
+          margin-right: 0;
+        }
+        .fa-stack-2x{
+          color: white;
+        }
+        .fa-stack-1x{
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+#loaderGeneral{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  overflow: hidden;
+
+  button {
+    height: 40px;
+    width: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    border-top: 2px solid #ff0000;
+    border-right: 2px solid transparent;
+    border-bottom:none;
+    border-left:none;
+    animation: spinner5 700ms linear infinite;
+  }
+  @keyframes spinner5 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.sliderContainer{
+
+  max-height: calc(100vh - 34px);
+
+  .bx-wrapper{
+    border:0;
+    background:inherit;
+    margin-bottom: 0;
+
+    .bx-controls{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .bx-controls-direction{
+        bottom: calc(50% + 72px);
+        position: absolute;
+        width: 52%;
+        left: 3%;
+        a{
+          z-index: 10;
+          width: 72px;
+          height: 72px;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .bx-pager{
+      padding: 0;
+      bottom: calc(50% - 7vw);
+      width: calc(32% - 1.5vw);
+
+
+      &.bx-default-pager{
+        a{
+          background-color: transparent;
+          border: 1px solid white;
+          width: 15px;
+          height: 15px;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+
+          &.active,
+          &:hover,
+          &:focus{
+            background: white;
+          }
+        }
+      }
+    }
+    .bx-prev,
+    .bx-next{
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: white;
+      &:hover{
+        background-position: inherit;
+      }
+    }
+    .bx-prev {
+      left: 10px;
+      background-image: url(https://quimicaya.com.ar/img/chevronLeft.svg);
+    }
+    .bx-next {
+      background-image: url(https://quimicaya.com.ar/img/chevronRight.svg);
+    }
+  }
+}
+
+.descripcionEmpresa{
+  .logoMini{
+    background-color: transparent;
+    margin-top: -45px;
+  }
+  .descripcion{
+    color: $color-principal;
+    h2{
+      font-weight: 900;
+    }
+    p{
+      font-size: 1.25rem;
+      padding: 0 2rem;
+      margin-bottom: 5rem;
+    }
+  }
+  .itemServicio{
+    color: $color-principal;
+    text-align: center;
+    line-height: 1.1rem;
+    img{
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.formularioContacto{
+  color: $color-principal;
+  h2{
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+  }
+
+  input, textarea,
+  select{
+    border-radius: 0;
+    box-shadow: 3px 3px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+  }
+
+}
+
+.datosContacto{
+  padding: 0 3rem;
+  color: $color-principal;
+  h2,strong{
+    font-weight: 900;
+  }
+  p{
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  a{
+    color: $color-principal;
+    &:hover{
+      color: darken($color-principal, 10%);
+      text-decoration: none;
+    }
+  }
+}
+
+.nosotros, .negocio {
+
+  &Descripcion {
+    p {
+      color: $color-principal;
+      font-size: 1.25rem;
+      margin: 0;
+
+      &:last-child {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  .itemNosotros {
+    color: $color-principal;
+    text-align: center;
+    line-height: 1.1rem;
+
+    img {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.negocio{
+  > .col-12{
+    margin-bottom: 4rem;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &Descripcion{
+    p{
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    a{
+      &.btn{
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+.carouselProductos{
+
+  .itemCarouselProductos{
+    text-align: center;
+    font-style: italic;
+    padding: 1rem;
+    img{
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+    }
+    a, &:hover{
+      text-decoration: none;
+      color: #333;
+      font-size: 1.25rem;
+      font-weight: 500;
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+}
+
+.modalProducto{
+
+  .modal-dialog{
+    margin-top: calc(50vh - 205px);
+  }
+
+  button{
+    &.close{
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      z-index: 10;
+    }
+  }
+
+  &__imagen{
+    width: 100%;
+    height: auto;
+  }
+  &__descripcion{
+
+    h1{
+
+    }
+    p{
+
+      span{
+        font-style: italic;
+      }
+    }
+
+  }
+}
+
+.slick-prev:before, .slick-next:before{
+  color: $color-principal;
+}
+
+.contenedorWhatsapp{
+  position: fixed;
+  bottom: 1rem;
+  right: 0px;
+  z-index: 15;
+  a{
+    display: block;
+    background: rgb(0,150,136);
+    border-radius: 5px 0 0 5px;
+    border: none;
+    padding: 8px 13px;
+    box-shadow: 10px 5px 15px rgba(0,0,0,0.75);
+    .fa{
+      color: white;
+      font-size: 2rem;
+    }
+    &:hover{
+      background: rgb(0,61,55);
+      background: -moz-linear-gradient(0deg, rgba(0,61,55,1) 0%, rgba(0,150,136,1) 100%);
+      background: -webkit-linear-gradient(0deg, rgba(0,61,55,1) 0%, rgba(0,150,136,1) 100%);
+      background: linear-gradient(0deg, rgba(0,61,55,1) 0%, rgba(0,150,136,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003d37",endColorstr="#009688",GradientType=1);
+      box-shadow: 10px 5px 15px rgba(0,0,0,1);
+    }
+  }
+}
+
+footer{
+  width: 100%;
+  margin-top: 100px;
+
+  p{
+    margin: 0;
+  }
+}
+
+@import "responsive";

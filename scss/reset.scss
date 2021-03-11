@@ -1,0 +1,12 @@
+@import "variables";
+@import "slick";
+@import "slick-theme";
+
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus{
+  color: #fff;
+  text-decoration: none;
+  background-color: $color-principal;
+}

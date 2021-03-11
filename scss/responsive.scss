@@ -1,0 +1,183 @@
+@import "variables";
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 575px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767px) {
+  body{
+    margin-bottom: 4rem;
+  }
+
+  .logoContainer{
+    .col-auto{
+      &:last-child{
+        display: block !important;
+        h1{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
+  }
+
+  .contenedorNavbarMenu{
+    #navbarMenu{
+      position: fixed;
+      top: 101px;
+      left: 0;
+      background: rgba(0,0,0,0.25);
+      height: 100%;
+      width: 100%;
+      .navbar-nav{
+        position: fixed;
+        top: 101px;
+        left: 0;
+        background-color: $color-principal;
+        height: 100%;
+        width: 70vw;
+        padding: 0.25rem 1rem;
+        .nav-item{
+          margin-right: 0;
+        }
+        .dropdown-menu{
+          &.show{
+            background-color: rgba(0,0,0,0.25);
+            margin-top: 0;
+            border-radius: 0;
+            padding: 0;
+            .dropdown-item{
+              &:hover{
+                background-color: rgba(0,0,0,0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .descripcionEmpresa{
+    .logoMini{
+      margin-top: -20px;
+    }
+  }
+
+  /*.cabeceraSeccion{
+    .w-100{
+      overflow-x: hidden;
+      > img{
+        transform: scale(1.25);
+      }
+    }
+  }*/
+
+  .cabeceraLinea, .cabeceraSeccion{
+    .w-100{
+      overflow: hidden;
+      > img{
+        max-width: 150%;
+      }
+    }
+  }
+
+  .cabeceraSeccion{
+    .w-100{
+      > img{
+        max-width: 135%;
+      }
+    }
+  }
+
+  .modalProducto {
+    .modal-dialog {
+      margin-top: calc(50vh - 360px);
+      .modalProducto__descripcion{
+        h1{
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 832px) {
+
+  .navbar{
+    > .container{
+      .col-auto{
+        &.border-left{
+          display: none;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991px) {
+  .navbar{
+    > .container{
+      max-width: 100%;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1199px) {
+  .logoContainer{
+    .col-auto{
+      &:last-child{
+        display: none;
+      }
+    }
+  }
+  .sliderContainer {
+    .bx-wrapper {
+      .bx-controls {
+        .bx-controls-direction {
+          bottom: calc(50% + 10px);
+          position: inherit;
+          width: inherit;
+          left: inherit;
+
+          a{
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .bx-pager{
+          padding: 0;
+          bottom: calc(30% - 7vw);
+          width: 100%;
+          transform: scale(0.65);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .carouselProductos{
+    margin: 50px 0;
+  }
+    .sliderContainer {
+      .bx-wrapper {
+        .bx-controls {
+          .bx-controls-direction {
+            width: 48%;
+            left: 5%;
+          }
+        }
+      }
+    }
+}
